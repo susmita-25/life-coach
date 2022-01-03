@@ -67,7 +67,7 @@ export default function FadeMenu() {
         new_Arr.map((reminder) => {
           if(new Date().getTime() > new Date(reminder.rem_date).getTime()){
             let notification = notifyMe(reminder.title)
-            notification.close()
+            // notification.close()
             reminder.rem_date = new Date(new Date().getTime()+(reminder.remind_after*60*1000));
             reminder.cur_date = new Date();
           }
