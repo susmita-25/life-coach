@@ -41,6 +41,7 @@ function TabPanel(props) {
 export default function FadeMenu() {
     const [value, setValue] = React.useState(0);
     const [remindVal, setRemindVal] = React.useState('');
+    const [remindCustomVal,setRemindCustomVal] = React.useState('');
     const [titleVal,setTitleVal] = React.useState('');
     const [startTime, setStartTime] = React.useState(0);
     const [endTime, setEndTime] = React.useState(0);
@@ -58,7 +59,7 @@ export default function FadeMenu() {
       localStorage.clear();
       localStorage.setItem('eventArray',JSON.stringify(newEventArray))
       setInterval(() => timer(), 15000);
-    }, )
+    }, [])
   
     const timer = () => {
       let new_Arr = JSON.parse(localStorage.getItem('eventArray') === null ? [] : localStorage.getItem('eventArray'))
@@ -78,27 +79,27 @@ export default function FadeMenu() {
     const motivationalQuotesArr = [
       {
         title:'Your children get only one childhood. Make it memorable. —Regina Brett, author',
-        remind_after:30,
+        remind_after:1,
         cur_date:new Date(),
-        rem_date:new Date(new Date().getTime()+(30*60*1000)),
+        rem_date:new Date(new Date().getTime()+(1*60*1000)),
         start_time:0,
         end_time:0,
         is_show:false
       },
       {
         title:'The bad news is time flies. The good news is you are the pilot. —Michael Altshuler, motivational speaker and sales consultant',
-        remind_after:20,
+        remind_after:2,
         cur_date:new Date(),
-        rem_date:new Date(new Date().getTime()+(20*60*1000)),
+        rem_date:new Date(new Date().getTime()+(2*60*1000)),
         start_time:0,
         end_time:0,
         is_show:false
       },
       {
         title:'The key is in not spending time, but in investing it. —Stephen R. Covey, author',
-        remind_after:10,
+        remind_after:3,
         cur_date:new Date(),
-        rem_date:new Date(new Date().getTime()+(10*60*1000)),
+        rem_date:new Date(new Date().getTime()+(3*60*1000)),
         start_time:0,
         end_time:0,
         is_show:false
@@ -120,6 +121,11 @@ export default function FadeMenu() {
     const handleRemindValueChange = (event) => {
         setRemindVal(event.target.value);
         handleFieldChange(event)
+    };
+
+    const handleCustomRemindValueChange = (event) => {
+      setRemindCustomVal(event.target.value);
+      handleFieldChange(event)
     };
 
     const handleTitleValueChange = (event) => {
@@ -344,7 +350,7 @@ export default function FadeMenu() {
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
-          value={remindVal}
+          value={remindCustomVal}
           onChange={handleRemindValueChange}
           label="Remind After"
           name='remind_after'
