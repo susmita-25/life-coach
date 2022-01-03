@@ -148,6 +148,7 @@ export default function FadeMenu() {
     // }
 
     const handleChange = (e, newValue) => {
+      resetForm();
       setValue(newValue);
     };
 
@@ -156,6 +157,14 @@ export default function FadeMenu() {
     };
 
     const handleSaveUserInfoActionEvent=(e)=>{
+      if(eventData.start_time === 0){
+        alert("Please select start time");
+        return false;
+      }
+      if(eventData.end_time === 0){
+        alert("Please select end time");
+        return false;
+      }
        let diff = eventData.end_time - eventData.start_time;
        let temp = eventData;
        let title = document.getElementById('standard-basic-usr-info').value;
@@ -167,6 +176,16 @@ export default function FadeMenu() {
     }
 
     const handleSaveActionEvent = (e) => {
+      
+      if(eventData.title.trim() === ""){
+        alert("Please add title");
+        return false;
+      }
+      if(eventData.remind_after === 0){
+        alert("Please select remind time");
+        // resetForm();
+        return false;
+      }
       let temp = [...newEventArray]
       let next_date = new Date(new Date().getTime()+(eventData.remind_after*60*1000));
       eventData.rem_date = next_date;
@@ -177,6 +196,7 @@ export default function FadeMenu() {
       setNewEventArray(temp)
       localStorage.removeItem('eventArray')
       localStorage.setItem("eventArray",JSON.stringify(temp))
+      resetForm();
       temp = {
         title:'',
         remind_after:0,
@@ -186,7 +206,21 @@ export default function FadeMenu() {
       }
       setEventData(temp)      
     }
-
+    const resetForm=()=>{
+      let temp = {
+        title:'',
+        remind_after:0,
+        cur_date:new Date(),
+        rem_date:new Date(),
+        is_show:true
+      }
+      setRemindVal('');
+    setRemindCustomVal('');
+    setTitleVal('');
+    setStartTime(0);
+    setEndTime(0);
+      setEventData(temp);
+    }
     const deleteForm= (e,index)=>{
      let temp = JSON.parse(localStorage.getItem('eventArray'))
      temp.splice(index,1);
@@ -328,7 +362,7 @@ export default function FadeMenu() {
       <CardActions disableSpacing>
       <div style={{float:'right',margin:50}}>
         <Button variant="contained" onClick={handleSaveUserInfoActionEvent}>Remind Me</Button>
-        <Button style={{marginLeft:10}} variant="contained" >Cancel</Button>
+        <Button style={{marginLeft:10}} onClick={resetForm} variant="contained" >Cancel</Button>
        </div>
       </CardActions>
       
@@ -344,7 +378,7 @@ export default function FadeMenu() {
         subheader="Set alert for your convenience"
         />
         <CardContent>
-        <TextField className='w-100' id="standard-basic" name='title' label="Title" variant="standard" onChange={handleFieldChange} /><br />
+        <TextField className='w-100' id="standard-basic" name='title' value={titleVal} label="Title" variant="standard" onChange={handleTitleValueChange} /><br />
       
       <FormControl variant="standard" className='w-100'>
         <InputLabel id="demo-simple-select-standard-label">Remind After</InputLabel>
@@ -370,7 +404,7 @@ export default function FadeMenu() {
       <CardActions disableSpacing>
       <div style={{float:'right',margin:50}}>
         <Button variant="contained" onClick={handleSaveActionEvent}>Remind Me</Button>
-        <Button style={{marginLeft:10}} variant="contained" >Cancel</Button>
+        <Button style={{marginLeft:10}} variant="contained" onClick={resetForm}>Cancel</Button>
        </div>
       </CardActions>
       
@@ -425,7 +459,7 @@ export default function FadeMenu() {
       <CardActions disableSpacing>
       <div style={{float:'right',margin:50}}>
         <Button variant="contained" onClick={handleSaveActionEvent}>Remind Me</Button>
-        <Button style={{marginLeft:10}} variant="contained" >Cancel</Button>
+        <Button style={{marginLeft:10}} variant="contained" onClick={resetForm}>Cancel</Button>
        </div>
       </CardActions>
       
