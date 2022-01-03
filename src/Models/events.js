@@ -39,6 +39,8 @@ function TabPanel(props) {
     progress: undefined,
     });;
 export default function FadeMenu() {
+
+  //Set state for differet reminder forms
     const [value, setValue] = React.useState(0);
     const [remindVal, setRemindVal] = React.useState('');
     const [remindCustomVal,setRemindCustomVal] = React.useState('');
@@ -58,16 +60,17 @@ export default function FadeMenu() {
     React.useEffect(() => {
       localStorage.clear();
       localStorage.setItem('eventArray',JSON.stringify(newEventArray))
+      // Call interval after every 30 seconds to send notifications
       setInterval(() => timer(), 30000);
     }, [])
   
+    //Method to send notification after evenry 30 seconds
     const timer = () => {
       let new_Arr = JSON.parse(localStorage.getItem('eventArray') === null ? [] : localStorage.getItem('eventArray'))
       if(new_Arr.length > 0){
         new_Arr.map((reminder) => {
           if(new Date().getTime() > new Date(reminder.rem_date).getTime()){
-            let notification = notifyMe(reminder.title)
-            // notification.close()
+            notifyMe(reminder.title)
             reminder.rem_date = new Date(new Date().getTime()+(reminder.remind_after*60*1000));
             reminder.cur_date = new Date();
           }
@@ -76,6 +79,8 @@ export default function FadeMenu() {
         localStorage.setItem('eventArray',JSON.stringify(new_Arr));
       }
     }
+
+    //Add motivational quotes for user to motivate work life
     const motivationalQuotesArr = [
       {
         title:'Your children get only one childhood. Make it memorable. —Regina Brett, author',
@@ -117,7 +122,7 @@ export default function FadeMenu() {
     const [newEventArray,setNewEventArray] = React.useState(
       localStorage.getItem('eventArray') === null ? motivationalQuotesArr : JSON.parse(localStorage.getItem('eventArray')).concat(motivationalQuotesArr)
     )
-    
+    // Handle change events for reminder dropdowns
     const handleRemindValueChange = (event) => {
         setRemindVal(event.target.value);
         handleFieldChange(event)
@@ -143,11 +148,7 @@ export default function FadeMenu() {
     handleFieldChange(event)
 };
 
-    // const handleTitleValueChange=(e)=>{
-    //   setEventData( {...eventData,[e.target.name]: e.target.text} )
-    // }
-
-    const handleChange = (e, newValue) => {
+  const handleChange = (e, newValue) => {
       resetForm();
       setValue(newValue);
     };
@@ -156,6 +157,7 @@ export default function FadeMenu() {
       setEventData( {...eventData,[e.target.name]: e.target.value} )
     };
 
+    // Save notification form
     const handleSaveUserInfoActionEvent=(e)=>{
       if(eventData.start_time === 0){
         alert("Please select start time");
@@ -206,6 +208,8 @@ export default function FadeMenu() {
       }
       setEventData(temp)      
     }
+
+    //Reset form and state
     const resetForm=()=>{
       let temp = {
         title:'',
@@ -221,6 +225,8 @@ export default function FadeMenu() {
     setEndTime(0);
       setEventData(temp);
     }
+
+    //delete notification from array
     const deleteForm= (e,index)=>{
      let temp = JSON.parse(localStorage.getItem('eventArray'))
      temp.splice(index,1);
@@ -229,6 +235,7 @@ export default function FadeMenu() {
       localStorage.setItem('eventArray',JSON.stringify(temp))
     }
     
+    // Notification call
     const notifyMe = (title) => {
       let notification 
       // Let's check if the browser supports notifications
