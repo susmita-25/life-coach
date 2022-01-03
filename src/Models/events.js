@@ -253,30 +253,30 @@ export default function FadeMenu() {
         >
           <MenuItem value="">
           </MenuItem>
-          <MenuItem value={1}>01</MenuItem>
-          <MenuItem value={2}>02</MenuItem>
-          <MenuItem value={3}>03</MenuItem>
-          <MenuItem value={4}>04</MenuItem>
-          <MenuItem value={5}>05</MenuItem>
-          <MenuItem value={6}>06</MenuItem>
-          <MenuItem value={7}>07</MenuItem>
-          <MenuItem value={8}>08</MenuItem>
-          <MenuItem value={9}>09</MenuItem>
-          <MenuItem value={10}>10</MenuItem>
-          <MenuItem value={11}>11</MenuItem>
-          <MenuItem value={12}>12</MenuItem>
-          <MenuItem value={13}>13</MenuItem>
-          <MenuItem value={14}>14</MenuItem>
-          <MenuItem value={15}>15</MenuItem>
-          <MenuItem value={16}>16</MenuItem>
-          <MenuItem value={17}>17</MenuItem>
-          <MenuItem value={18}>18</MenuItem>
-          <MenuItem value={19}>19</MenuItem>
-          <MenuItem value={20}>20</MenuItem>
-          <MenuItem value={21}>21</MenuItem>
-          <MenuItem value={22}>22</MenuItem>
-          <MenuItem value={23}>23</MenuItem>
-          <MenuItem value={0}>00</MenuItem>
+          <MenuItem value={60}>01</MenuItem>
+          <MenuItem value={120}>02</MenuItem>
+          <MenuItem value={180}>03</MenuItem>
+          <MenuItem value={240}>04</MenuItem>
+          <MenuItem value={300}>05</MenuItem>
+          <MenuItem value={360}>06</MenuItem>
+          <MenuItem value={420}>07</MenuItem>
+          <MenuItem value={480}>08</MenuItem>
+          <MenuItem value={540}>09</MenuItem>
+          <MenuItem value={600}>10</MenuItem>
+          <MenuItem value={660}>11</MenuItem>
+          <MenuItem value={720}>12</MenuItem>
+          <MenuItem value={780}>13</MenuItem>
+          <MenuItem value={840}>14</MenuItem>
+          <MenuItem value={900}>15</MenuItem>
+          <MenuItem value={960}>16</MenuItem>
+          <MenuItem value={1020}>17</MenuItem>
+          <MenuItem value={1080}>18</MenuItem>
+          <MenuItem value={1140}>19</MenuItem>
+          <MenuItem value={1200}>20</MenuItem>
+          <MenuItem value={1260}>21</MenuItem>
+          <MenuItem value={1320}>22</MenuItem>
+          <MenuItem value={1380}>23</MenuItem>
+          <MenuItem value={1440}>00</MenuItem>
         </Select>
       </FormControl>
       <FormControl variant="standard" className='w-100'>
@@ -291,30 +291,30 @@ export default function FadeMenu() {
         >
           <MenuItem value="">
           </MenuItem>
-          <MenuItem value={1}>01</MenuItem>
-          <MenuItem value={2}>02</MenuItem>
-          <MenuItem value={3}>03</MenuItem>
-          <MenuItem value={4}>04</MenuItem>
-          <MenuItem value={5}>05</MenuItem>
-          <MenuItem value={6}>06</MenuItem>
-          <MenuItem value={7}>07</MenuItem>
-          <MenuItem value={8}>08</MenuItem>
-          <MenuItem value={9}>09</MenuItem>
-          <MenuItem value={10}>10</MenuItem>
-          <MenuItem value={11}>11</MenuItem>
-          <MenuItem value={12}>12</MenuItem>
-          <MenuItem value={13}>13</MenuItem>
-          <MenuItem value={14}>14</MenuItem>
-          <MenuItem value={15}>15</MenuItem>
-          <MenuItem value={16}>16</MenuItem>
-          <MenuItem value={17}>17</MenuItem>
-          <MenuItem value={18}>18</MenuItem>
-          <MenuItem value={19}>19</MenuItem>
-          <MenuItem value={20}>20</MenuItem>
-          <MenuItem value={21}>21</MenuItem>
-          <MenuItem value={22}>22</MenuItem>
-          <MenuItem value={23}>23</MenuItem>
-          <MenuItem value={0}>00</MenuItem>
+          <MenuItem value={60}>01</MenuItem>
+          <MenuItem value={120}>02</MenuItem>
+          <MenuItem value={180}>03</MenuItem>
+          <MenuItem value={240}>04</MenuItem>
+          <MenuItem value={300}>05</MenuItem>
+          <MenuItem value={360}>06</MenuItem>
+          <MenuItem value={420}>07</MenuItem>
+          <MenuItem value={480}>08</MenuItem>
+          <MenuItem value={540}>09</MenuItem>
+          <MenuItem value={600}>10</MenuItem>
+          <MenuItem value={660}>11</MenuItem>
+          <MenuItem value={720}>12</MenuItem>
+          <MenuItem value={780}>13</MenuItem>
+          <MenuItem value={840}>14</MenuItem>
+          <MenuItem value={900}>15</MenuItem>
+          <MenuItem value={960}>16</MenuItem>
+          <MenuItem value={1020}>17</MenuItem>
+          <MenuItem value={1080}>18</MenuItem>
+          <MenuItem value={1140}>19</MenuItem>
+          <MenuItem value={1200}>20</MenuItem>
+          <MenuItem value={1260}>21</MenuItem>
+          <MenuItem value={1320}>22</MenuItem>
+          <MenuItem value={1380}>23</MenuItem>
+          <MenuItem value={1440}>00</MenuItem>
         </Select>
       </FormControl>
       </CardContent>
@@ -351,12 +351,12 @@ export default function FadeMenu() {
         >
           <MenuItem value="">
           </MenuItem>
-          <MenuItem value={1}>10</MenuItem>
-          <MenuItem value={2}>20</MenuItem>
-          <MenuItem value={3}>30</MenuItem>
-          <MenuItem value={4}>40</MenuItem>
-          <MenuItem value={5}>50</MenuItem>
-          <MenuItem value={6}>60</MenuItem>
+          <MenuItem value={10}>10</MenuItem>
+          <MenuItem value={20}>20</MenuItem>
+          <MenuItem value={30}>30</MenuItem>
+          <MenuItem value={40}>40</MenuItem>
+          <MenuItem value={50}>50</MenuItem>
+          <MenuItem value={60}>60</MenuItem>
         </Select>
       </FormControl>
       </CardContent>
@@ -406,12 +406,12 @@ export default function FadeMenu() {
         >
           <MenuItem value="">
           </MenuItem>
-          <MenuItem value={1}>10</MenuItem>
-          <MenuItem value={2}>20</MenuItem>
-          <MenuItem value={3}>30</MenuItem>
-          <MenuItem value={4}>40</MenuItem>
-          <MenuItem value={5}>50</MenuItem>
-          <MenuItem value={6}>60</MenuItem>
+          <MenuItem value={10}>10</MenuItem>
+          <MenuItem value={20}>20</MenuItem>
+          <MenuItem value={30}>30</MenuItem>
+          <MenuItem value={40}>40</MenuItem>
+          <MenuItem value={50}>50</MenuItem>
+          <MenuItem value={60}>60</MenuItem>
         </Select>
       </FormControl>
       </CardContent>
