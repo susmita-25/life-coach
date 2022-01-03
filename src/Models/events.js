@@ -58,7 +58,7 @@ export default function FadeMenu() {
     React.useEffect(() => {
       localStorage.clear();
       localStorage.setItem('eventArray',JSON.stringify(newEventArray))
-      setInterval(() => timer(), 15000);
+      setInterval(() => timer(), 30000);
     }, [])
   
     const timer = () => {
@@ -159,8 +159,9 @@ export default function FadeMenu() {
        let diff = eventData.end_time - eventData.start_time;
        let temp = eventData;
        let title = document.getElementById('standard-basic-usr-info').value;
-       temp.remind_after = diff*60;
+       temp.remind_after = diff;
        temp.title = title;
+       temp.is_show = false;
        setEventData(temp);
        handleSaveActionEvent(e);
     }
@@ -351,7 +352,7 @@ export default function FadeMenu() {
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
           value={remindCustomVal}
-          onChange={handleRemindValueChange}
+          onChange={handleCustomRemindValueChange}
           label="Remind After"
           name='remind_after'
         >
